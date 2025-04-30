@@ -15,6 +15,7 @@ public abstract class AppDatabase extends RoomDatabase {
     // TODO: HAVE TO MAKE gradeDao
     public abstract GradeDao gradeDao();
 
+
     public static synchronized AppDatabase getInstance(Context context){
         if (instance == null){
         instance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "grade_tracker_db")
