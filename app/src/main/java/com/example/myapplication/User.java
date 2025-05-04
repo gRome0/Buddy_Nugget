@@ -18,6 +18,22 @@ public class User {
     private Role role;
     private String studentID;
 
+public User(int userID, String username, String password, Role role, String studentID){
+   this.userID = userID;
+    this.username = username;
+    this.password = password;
+    this.role = role;
+    this.studentID = studentID; }
+}
+
+    @Ignore
+    public User (int userId, String username, String password, User.Role role ){
+     this.userID = userID;
+     this.username = username;
+     this.password = password;
+    this.role = role;
+    this.studentID = null;
+}
 
 
 
