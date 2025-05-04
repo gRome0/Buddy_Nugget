@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,16 @@ public class GradeAssignmentActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assignmentSpinner.setAdapter(adapter);
 
+        gradeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String studentIdText = studentIdField.getText().toString().trim();
+                String scoreText = scoreField.getText().toString().trim();
+                String selectedLabel = (String) assignmentSpinner.getSelectedItem();
+                if (studentIdText.isEmpty() || scoreText.isEmpty() || selectedLabel == null){
 
+                }
+            }
+        }
     }
 }
