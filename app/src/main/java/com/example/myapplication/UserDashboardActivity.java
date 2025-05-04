@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,16 @@ public class UserDashboardActivity extends AppCompatActivity {
         viewAssignmentBtn = findViewById(R.id.viewAssignmentsBtn);
         viewGradesBtn = findViewById(R.id.viewGradeBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
+
+        viewAssignmentBtn.setOnClickListener(new View.OnClickListener()) {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class);
+                startActivity();
+            });
+
+        }
 
     }
 }
