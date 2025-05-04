@@ -29,19 +29,26 @@ public class UserDashboardActivity extends AppCompatActivity {
         viewAssignmentBtn.setOnClickListener(new View.OnClickListener()) {
             @Override
             public void onClick(View v)
-            {
-                Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class); startActivity();
+            {Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class); startActivity();
             });
+
             viewGradesBtn.setOnClickListener(new View.OnClickListener()) {
                 @Override
-                        public void onClick(View v)
-                {
-                    Intent intent = new Intent(UserDashboardActivity.this, ViewGradesActivity.class);
-                    startActivity(intent);
+                public void onClick(View v)
+                {Intent intent = new Intent(UserDashboardActivity.this, ViewGradesActivity.class); startActivity(intent);
                 });
 
-
+            logoutBtn.setOnClickListener(new View.OnClickListener()) {
+                @Overridepublic void onClick(View v) {
+                    prefs.edit().remove("userId").apply();
+                    Intent intent = new Intent(UserDashboardActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                    }
+                });
             }
+
 
         }
 
