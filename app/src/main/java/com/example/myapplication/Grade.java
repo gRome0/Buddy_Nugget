@@ -11,9 +11,9 @@ public class Grade {
     private int gradeId;
     private int assignmentId;
     private String studentId;
-    private float score;
+    private double score;
     @Ignore
-    public Grade(int gradeId, int assignmentId, String studentId, float score){
+    public Grade(int gradeId, int assignmentId, String studentId, double score){
         this.gradeId = gradeId;
         this.assignmentId = assignmentId;
         this.studentId = studentId;
@@ -25,11 +25,11 @@ public class Grade {
     public int getGradeId() { return gradeId; }
     public int getAssignmentId() { return assignmentId; }
     public String getStudentId() { return studentId; }
-    public float getScore() { return score; }
+    public double getScore() { return score; }
 
     public void setGradeId(int gradeId) { this.gradeId = gradeId; }
     public void setAssignmentId(int assignmentId) { this.assignmentId = assignmentId; }
     public void setStudentId(String studentId) { this.studentId = studentId; }
-    public void setScore(float score) {this.score = score; }
+    public void setScore(double score) {this.score = score; }
 
 }
