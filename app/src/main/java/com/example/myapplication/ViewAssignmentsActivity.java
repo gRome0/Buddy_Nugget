@@ -23,7 +23,7 @@ public class ViewAssignmentsActivity extends AppCompatActivity {
             public void onChanged(List<Assignment> assignments)
             {adapter = new AssignmentAdapter(assignments); recyclerView.setAdapter(adapter); }
 
-        });
+        });//test
     }
 
 }
