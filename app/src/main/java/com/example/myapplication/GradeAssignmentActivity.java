@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,9 +45,29 @@ public class GradeAssignmentActivity extends AppCompatActivity {
                 String scoreText = scoreField.getText().toString().trim();
                 String selectedLabel = (String) assignmentSpinner.getSelectedItem();
                 if (studentIdText.isEmpty() || scoreText.isEmpty() || selectedLabel == null){
-
+                Toast.makeText(GradeAssignmentActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                return;
+                }
+                try {
+                    int assignmentId = assignmentMap.get(selectedLabel);
+                    float score = Float.parseFloat(scoreText);
+                    User student = db.userDao().findByStudentId(studentIdText);
+                    if (student == null) {
+                        Toast.makeText(GradeAssignmentActivity.this, "Student ID not found", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    Grade grade = new Grade(0, assignmentId, studentIdText, score);
+                    db.gradeDao().insert(grade);
+                    Toast.makeText(GradeAssignmentActivity.this, "Grade submitted for " + student.getUsername(), Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                catch (NumberFormatException e) {
+                    Toast.makeText(GradeAssignmentActivity.this, "Invalid score format", Toast.LENGTH_SHORT).show();
                 }
             }
-        }
+        });
+    }
+    public static Intent newIntent(android.content.Context context) {
+        return new Intent(context, GradeAssignmentActivity.class);
     }
 }
