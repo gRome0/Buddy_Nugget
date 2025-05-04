@@ -1,11 +1,24 @@
 package com.example.myapplication;
 
+
+
+
+@Entity
+
 public class User {
     public enum Role { NORMAL, TEACHER, ADMIN;
      @Override
      public String toString(){return name();}
     }
-/// this is a test
-/// to see if thys can work
-    /// plz woerxsaxskcsacds
+
+    @PrimaryKey(autoGenerate = true)
+    private int userID;
+    private String username;
+    private String password;
+    private Role role;
+    private String studentID;
+
+
+
+
 }
