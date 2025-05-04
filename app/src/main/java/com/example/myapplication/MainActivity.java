@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         createAccountBtn = findViewById(R.id.createAccount);
 
+        //test
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
