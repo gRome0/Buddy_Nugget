@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ public class GradeWithAssignmentAdapter extends RecyclerView.Adapter<GradeWithAs
 
     @Override
     public void onBindViewHolder(@NonNull GradeWithAssignmentAdapter.ViewHolder holder, int position) {
+        GradeWithAssignment gwa = gradeList.get(position);
 
     }
 
@@ -24,6 +27,7 @@ public class GradeWithAssignmentAdapter extends RecyclerView.Adapter<GradeWithAs
     @NonNull
     @Override
     public GradeWithAssignmentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()) .inflate(android.R.layout.simple_list_item_2,parent, false);
+        return new ViewHolder(view);
     }
 }
