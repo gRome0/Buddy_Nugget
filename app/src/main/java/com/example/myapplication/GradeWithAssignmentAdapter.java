@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +17,16 @@ public class GradeWithAssignmentAdapter extends RecyclerView.Adapter<GradeWithAs
     @Override
     public void onBindViewHolder(@NonNull GradeWithAssignmentAdapter.ViewHolder holder, int position) {
         GradeWithAssignment gwa = gradeList.get(position);
-
+        String title = (gwa.assignment != null) ? gwa.assignment.getTitle() : "(Deleted Assignment)";
+        holder.assignmentTitle.setText("Assignment: " + title); holder.gradeScore.setText ("Score: " + gwa.grade.getScore());
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getItemCount() { return gradeList.size(); }
+    static class ViewHolder extends RecyclerView.ViewHolder { TextView assignmentTitle, gradeScore;
+        ViewHolder(View itemView) { super(itemView); assignmentTitle = itemView.findViewById(android.R.id.text1);
+        gradeScore = itemView.findViewById(android.R.id.text2);
+        }
     }
 
     @NonNull
