@@ -15,6 +15,7 @@ public class UserDashboardActivity extends AppCompatActivity {
     protected void Oncreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
 
         SharedPreferencesprefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences prefs;
         int userId = prefs.getInt("userId", -1);
         if(userId == -1) { finish (); return; }
 
@@ -26,27 +27,38 @@ public class UserDashboardActivity extends AppCompatActivity {
         viewGradesBtn = findViewById(R.id.viewGradeBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
 
-        viewAssignmentBtn.setOnClickListener(new View.OnClickListener()) {
+        viewAssignmentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }); {
             @Override
             public void onClick(View v)
             {Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class); startActivity();
-            });
+            };
 
-            viewGradesBtn.setOnClickListener(new View.OnClickListener()) {
+            viewGradesBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            }); {
                 @Override
                 public void onClick(View v)
                 {Intent intent = new Intent(UserDashboardActivity.this, ViewGradesActivity.class); startActivity(intent);
-                });
+                };
 
             logoutBtn.setOnClickListener(new View.OnClickListener()) {
-                @Overridepublic void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                     prefs.edit().remove("userId").apply();
                     Intent intent = new Intent(UserDashboardActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
                     }
-                });
+                };
             }
         public static Intent newIntent(android.content.Context context) {
                 return new Intent(context, UserDashboardActivity.class);
