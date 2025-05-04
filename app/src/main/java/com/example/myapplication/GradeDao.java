@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -33,4 +34,8 @@ public interface GradeDao {
     @Transaction
     @Query("SELECT * FROM Grade WHERE studentId = :studentId")
     List<GradeWithAssignment> getGradesWithAssignmentsByStudent(String studentId);
+
+    @Transaction
+    @Query("SELECT * FROM Grade WHERE studentId = :studentId")
+    LiveData<List<GradeWithAssignment>> getGradesWithAssignmentsLive(String studentId);
 }
