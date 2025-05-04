@@ -19,7 +19,11 @@ public class ViewAssignmentsActivity extends AppCompatActivity {
 
         db.assignmentDao().getAllAssignmentsLive().observe(this, new Observer<List<Assignment>>()) {
 
-        }
+            @Override
+            public void onChanged(List<Assignment> assignments)
+            {adapter = new AssignmentAdapter(assignments); recyclerView.setAdapter(adapter); }
+
+        });
     }
 
 }
