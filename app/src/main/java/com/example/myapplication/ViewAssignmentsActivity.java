@@ -1,5 +1,12 @@
 package com.example.myapplication;
 
-public class ViewAssignmentsActivity {
-//test
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class ViewAssignmentsActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private AssignmentAdapter adapter;
+
+
 }
