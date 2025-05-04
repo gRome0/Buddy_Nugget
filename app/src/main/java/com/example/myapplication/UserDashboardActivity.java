@@ -30,9 +30,18 @@ public class UserDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class);
-                startActivity();
+                Intent intent = new Intent(UserDashboardActivity.this, ViewAssignmentsActivity.class); startActivity();
             });
+            viewGradesBtn.setOnClickListener(new View.OnClickListener()) {
+                @Override
+                        public void onClick(View v)
+                {
+                    Intent intent = new Intent(UserDashboardActivity.this, ViewGradesActivity.class);
+                    startActivity(intent);
+                });
+
+
+            }
 
         }
 
