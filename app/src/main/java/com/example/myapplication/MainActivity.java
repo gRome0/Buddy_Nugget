@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        createAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CreateAssignmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        public static Intent newIntent(Context context){
+            return; new Intent(context, MainActivity.class)
+        }
 
     }
 }
