@@ -14,7 +14,7 @@ public class UserDashboardActivity extends AppCompatActivity {
     @Override
     protected void Oncreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
 
-        SharedPreferencesprefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences SharedPreferencesprefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences prefs;
         int userId = prefs.getInt("userId", -1);
         if(userId == -1) { finish (); return; }
