@@ -64,7 +64,6 @@ public class UserDashboardActivity extends AppCompatActivity {
                 return new Intent(context, UserDashboardActivity.class);
                 //test
             }
-
         }
     }
 }
