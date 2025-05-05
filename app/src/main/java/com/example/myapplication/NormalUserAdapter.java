@@ -19,5 +19,11 @@ public class NormalUserAdapter extends RecyclerView.Adapter<NormalUserAdapter.No
     {View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user_row, parent, false);
         return new NormalUserViewHolder(view);}
 
+    @Override
+    public void onBindViewHolder(@NonNull NormalUserViewHolder holder, int position)
+    {User user = userList.get(position); holder.usernameView.setText("Username: " + user.getUsername()); holdder.studentIdView
+            ("Student ID: " + (user.getStudentId() != null ? user.getStudentId() : "N/A")); }
+
+
     }
 }
