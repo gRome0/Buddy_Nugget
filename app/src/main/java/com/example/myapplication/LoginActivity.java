@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity{
 private EditText usernameField, passwordField;
 private Button loginButton;
 
+
 private AppDatabase db;
 private com.example.myapplication.UserDao userDao;
 
