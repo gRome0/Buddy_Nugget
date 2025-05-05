@@ -20,6 +20,7 @@ public class Grade {
         this.score = score;
     }
 
+
     public Grade(){}
 
     public int getGradeId() { return gradeId; }
