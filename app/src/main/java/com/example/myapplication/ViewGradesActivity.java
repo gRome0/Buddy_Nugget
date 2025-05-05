@@ -39,7 +39,5 @@ public class ViewGradesActivity extends AppCompatActivity {
             public static Intent newIntent(Context context){
             return new Intent(context, ViewGradesActivity.class);
         }
-
-
     }
 }
