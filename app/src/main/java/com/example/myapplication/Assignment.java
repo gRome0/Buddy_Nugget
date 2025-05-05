@@ -12,7 +12,7 @@ public class Assignment {
     private String description;
     private String dueDate;
 
-    // Constructor (no courseId)
+    // TODO: might need to add courseId or Date type for dueDate, implement getDescription
     public Assignment(int assignmentId, String title, String description, String dueDate) {
         this.assignmentId = assignmentId;
         this.title = title;
