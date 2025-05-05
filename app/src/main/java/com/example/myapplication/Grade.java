@@ -6,12 +6,14 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Grade {
+public class package com.example.myapplication; Grade {
     @PrimaryKey(autoGenerate = true)
     private int gradeId;
     private int assignmentId;
     private String studentId;
     private float score;
+
+
     @Ignore
     public Grade(int gradeId, int assignmentId, String studentId, float score){
         this.gradeId = gradeId;
