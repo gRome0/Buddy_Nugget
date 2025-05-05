@@ -8,6 +8,7 @@ public class GradeWithAssignment {
     public com.example.myapplication.Grade grade;
 
 
+
     @Relation(parentColumn = "assignmentId", entityColumn = "assignmentId")
     public com.example.myapplication.Assignment assignment;
 }
