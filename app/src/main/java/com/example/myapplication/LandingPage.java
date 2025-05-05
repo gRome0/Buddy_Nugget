@@ -1,6 +1,61 @@
 package com.example.myapplication;
 
-public class LandingPage {
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LandingPage extends AppCompatActivity {
+
+    private TextView welcomeText;
+
+    private Button adminBtn, logoutBtn, continueBtn;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
