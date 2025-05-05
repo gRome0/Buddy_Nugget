@@ -23,8 +23,6 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE username = :username LIMIT 1")
     com.example.myapplication.User findByUsername(String username);
 
-
-
     @Query("SELECT * FROM User WHERE userId = :userId LIMIT 1")
     com.example.myapplication.User getUserById(int userId);
 
