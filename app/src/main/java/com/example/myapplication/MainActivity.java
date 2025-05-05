@@ -1,4 +1,4 @@
-package com.gromeo.myapplication;
+package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +20,8 @@ import com.example.myapplication.LoginActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Button loginBtn, createAccountBtn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

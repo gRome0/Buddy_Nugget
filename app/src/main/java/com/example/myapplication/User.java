@@ -7,11 +7,10 @@ import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
 @Entity
-@TypeConverters(com.gromeo.myapplication.RoleConverter.class)
+@TypeConverters(com.example.myapplication.RoleConverter.class)
 public class User {
     public enum Role {
         NORMAL, TEACHER, ADMIN;
-
 
         /// ///toString
         @Override
