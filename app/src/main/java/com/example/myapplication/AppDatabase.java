@@ -10,7 +10,8 @@ import androidx.room.TypeConverters;
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
     // TODO: HAVE TO MAKE userDao
-    public abstract com.gromeo.myapplication.UserDao userDao();
+
+    public abstract com.example.myapplication.UserDao userDao();
 
     // TODO: HAVE TO MAKE assignmentDao
     public abstract AssignmentDao assignmentDao();
