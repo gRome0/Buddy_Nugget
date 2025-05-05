@@ -5,6 +5,7 @@ package com.example.myapplication;
 
 @Entity
 @TypeConverters
+
 public class User {
     public enum Role { NORMAL, TEACHER, ADMIN;
      @Override
