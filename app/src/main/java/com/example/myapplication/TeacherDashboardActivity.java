@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -56,5 +57,20 @@ public class TeacherDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(TeacherDashboardActivity.this, StudentRosterForTeacherActivity.class));
             }
         });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prefs.edit().remove("userId").apply();
+                Intent intent = new Intent(TeacherDashboardActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+    }
+    public static Intent newIntent(Context context) {
+        return new Intent(context, TeacherDashboardActivity.class);
     }
 }
