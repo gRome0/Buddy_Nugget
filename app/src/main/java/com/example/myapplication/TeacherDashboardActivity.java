@@ -1,6 +1,8 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,5 +35,26 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         gradeAssignmentsBtn = findViewById(R.id.gradeAssignmentsBtn);
         viewStudentRosterBtn = findViewById(R.id.viewStudentRosterBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
+
+        createAssignmentBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherDashboardActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+
+        gradeAssignmentsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherDashboardActivity.this, GradeAssignmentActivity.class));
+            }
+        });
+
+        viewStudentRosterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherDashboardActivity.this, StudentRosterForTeacherActivity.class));
+            }
+        });
     }
 }
