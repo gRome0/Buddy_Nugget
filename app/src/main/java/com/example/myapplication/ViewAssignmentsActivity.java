@@ -11,6 +11,7 @@ public class ViewAssignmentsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AssignmentAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_assignments);
