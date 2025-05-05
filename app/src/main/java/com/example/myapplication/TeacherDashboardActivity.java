@@ -28,5 +28,10 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+        createAssignmentBtn = findViewById(R.id.createAssignmentBtn);
+        gradeAssignmentsBtn = findViewById(R.id.gradeAssignmentsBtn);
+        viewStudentRosterBtn = findViewById(R.id.viewStudentRosterBtn);
+        logoutBtn = findViewById(R.id.logoutBtn);
     }
 }
