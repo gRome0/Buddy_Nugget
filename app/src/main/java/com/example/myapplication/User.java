@@ -1,40 +1,62 @@
 package com.example.myapplication;
 
 
-
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 @Entity
-@TypeConverters
-
+@TypeConverters(com.gromeo.myapplication.RoleConverter.class)
 public class User {
-    public enum Role { NORMAL, TEACHER, ADMIN;
-     @Override
-     public String toString(){return name();}
+    public enum Role {
+        NORMAL, TEACHER, ADMIN;
+
+
+        /// ///toString
+        @Override
+        public String toString() {
+            return name();
+        }
     }
 
     @PrimaryKey(autoGenerate = true)
-    private int userID;
+    private int userId;
     private String username;
     private String password;
     private Role role;
-    private String studentID;
+    private String studentId;
 
-public User(int userID, String username, String password, Role role, String studentID){
-   this.userID = userID;
-    this.username = username;
-    this.password = password;
-    this.role = role;
-    this.studentID = studentID; }
-}
+
+    public User(int userId, String username, String password, Role role, String studentId) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.studentId = studentId;
+    }
+
 
     @Ignore
-    public User (int userId, String username, String password, User.Role role ){
-     this.userID = userID;
-     this.username = username;
-     this.password = password;
-    this.role = role;
-    this.studentID = null;
+    public User(int userId, String username, String password, Role role) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.studentId = null; // Default
+    }
+
+    /// setters and getters
+    public int getUserId() { return userId; }
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public Role getRole() { return role; }
+    public String getStudentId() { return studentId; }
+
+    public void setUserId(int userId) { this.userId = userId; }
+    public void setUsername(String username) { this.username = username; }
+    public void setPassword(String password) { this.password = password; }
+    public void setRole(Role role) { this.role = role; }
+    public void setStudentId(String studentId) { this.studentId = studentId; }
 }
 
-
-}

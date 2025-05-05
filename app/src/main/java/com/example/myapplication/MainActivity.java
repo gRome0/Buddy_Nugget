@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.gromeo.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.myapplication.CreateUserActivity;
+import com.example.myapplication.LandingPage;
+import com.example.myapplication.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,31 +35,22 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         int userId = prefs.getInt("userId", -1);
         if (userId != -1)
-        {startActivty(new Intent(MainActivity.this, LandingPage.class));finish();return;}
+        {startActivity(new Intent(MainActivity.this, LandingPage.class)); finish(); return; }
+
 
         loginBtn = findViewById(R.id.loginBtn);
-        createAccountBtn = findViewById(R.id.createAccount);
+        createAccountBtn = findViewById(R.id.createAccountBtn);
 
-        //test
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+            public void onClick(View v)
+            {Intent intent = new Intent(MainActivity.this, LoginActivity.class); startActivity(intent); } });
 
         createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CreateAssignmentActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        public static Intent newIntent(Context context){
-            return; new Intent(context, MainActivity.class)
-        }
-
+            public void onClick(View v)
+            { Intent intent = new Intent(MainActivity.this, CreateUserActivity.class); startActivity(intent); } });
     }
+    public static Intent newIntent(Context context)
+    { return new Intent(context, MainActivity.class); }
 }
