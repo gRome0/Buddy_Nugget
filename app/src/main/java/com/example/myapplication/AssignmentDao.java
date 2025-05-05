@@ -11,7 +11,7 @@ import java.util.List;
 
 @Dao
 public interface AssignmentDao {
-    ///  Return inserted assignment ID so it can be shown after creation
+
     @Insert
     long insert(Assignment assignment);
 
