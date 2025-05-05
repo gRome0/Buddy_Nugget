@@ -20,6 +20,8 @@ public class ViewGradesActivity extends AppCompatActivity {
         int userId = prefs.getInt("userId", -1);
         if (userId == -1)
         {Toast.makeText(this, "No user logged in.", Toast.LENGTH_SHORT.show()); finish();return; }
+        String studentId = student.getStudentId();
+
 
     }
 }
