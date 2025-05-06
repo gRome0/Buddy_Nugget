@@ -21,6 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".LandingPage" />
+        <activity android:name=".UserDashboardActivity" />
+        <activity android:name=".TeacherDashboardActivity" />
+        <activity android:name=".AdminDashboardActivity" />
+        <activity android:name=".CreateAssignmentActivity" />
+        <activity android:name=".GradeAssignmentActivity" />
+        <activity android:name=".ViewAssignmentsActivity" />
+        <activity android:name=".ViewGradesActivity" />
+        <activity android:name=".CreateUserActivity" />
+        <activity android:name=".StudentRosterForTeacherActivity" />
     </application>
 
 </manifest>
