@@ -18,16 +18,15 @@ public class ViewAssignmentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_assignments);
-        recyclerView = findViewById(R.id.assignmentsRecyclerView); recyclerView.setLayoutManager(new LinearLayoutManager());
+        recyclerView = findViewById(R.id.assignmentsRecyclerView); recyclerView.setLayoutManager(new LinearLayoutManager(this));
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
 
-        db.assignmentDao().getAllAssignmentsLive().observe(this, new Observer<List<Assignment>>()) {
-
+        db.assignmentDao().getAllAssignmentsLive().observe(this, new Observer<List<Assignment>>() {
             @Override
             public void onChanged(List<Assignment> assignments)
             {adapter = new AssignmentAdapter(assignments); recyclerView.setAdapter(adapter); }
-
         });
+
     }
 
 }
