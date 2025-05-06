@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">My Application</string>
-
+    <string name="create_assignment">Create Assignment</string>
+    <string name="grade_assignment">Grade Assignment</string>
+    <string name="view_student_roster">View Student Roster</string>
+    <string name="logout">Logout</string>
+    <string name="student_roster">Student Roster</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="due_date_yyyy_mm_dd">Due Date (YYYY-MM-DD)</string>
