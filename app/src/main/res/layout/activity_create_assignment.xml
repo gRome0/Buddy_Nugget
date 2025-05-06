@@ -9,4 +9,15 @@
         android:hint="@string/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/assignmentDescription"
+        android:hint="@string/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/assignmentDueDate"
+        android:hint="@string/due_date_yyyy_mm_dd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
