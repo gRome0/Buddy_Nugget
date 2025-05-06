@@ -4,4 +4,5 @@
     <string name="grade_assignment">Grade Assignment</string>
     <string name="view_student_roster">View Student Roster</string>
     <string name="logout">Logout</string>
+    <string name="student_roster">Student Roster</string>
 </resources>
