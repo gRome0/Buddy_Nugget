@@ -3,6 +3,8 @@ package com.example.myapplication;
 import android.content.Context;
 
 import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 @Database(entities = {User.class, Assignment.class, Grade.class}, version = 3) // version bumped from 2 to 3

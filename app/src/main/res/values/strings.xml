@@ -5,4 +5,10 @@
     <string name="view_student_roster">View Student Roster</string>
     <string name="logout">Logout</string>
     <string name="student_roster">Student Roster</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="due_date_yyyy_mm_dd">Due Date (YYYY-MM-DD)</string>
+    <string name="submit_assignment">Submit Assignment</string>
+    <string name="username">Username</string>
+    <string name="student_id">Student ID</string>
 </resources>
