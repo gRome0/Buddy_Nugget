@@ -44,7 +44,7 @@ public class NormalUserAdapter extends RecyclerView.Adapter<NormalUserAdapter.No
         public NormalUserViewHolder(@NonNull View itemView) {
             super(itemView);
             usernameView = itemView.findViewById(R.id.usernameText);
-            studentIdView = itemView.findViewById(R.id.student)
+            studentIdView = itemView.findViewById(R.id.student);
         }
     }
 } //
