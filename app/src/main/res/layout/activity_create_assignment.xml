@@ -20,4 +20,10 @@
         android:hint="@string/due_date_yyyy_mm_dd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/submitAssignmentBtn"
+        android:text="@string/submit_assignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
