@@ -23,7 +23,7 @@ public interface GradeDao {
     void delete(Grade grade);
 
     @Query("SELECT * FROM Grade WHERE studentId = :studentId")
-    List<Grade> getGradesByStudent(int studentId);
+    List<Grade> getGradesByStudent(String studentId);
 
     @Query("SELECT * FROM Grade WHERE assignmentId = :assignmentId")
     List<Grade> getGradesByAssignment(int assignmentId);
@@ -38,4 +38,5 @@ public interface GradeDao {
     @Transaction
     @Query("SELECT * FROM Grade WHERE studentId = :studentId")
     LiveData<List<GradeWithAssignment>> getGradesWithAssignmentsLive(String studentId);
+
 }
