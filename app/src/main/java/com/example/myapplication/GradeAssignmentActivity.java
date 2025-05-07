@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 
 /*
-lets teachers assign grades to students using assignment spinner and ID.
+lets teachers assign grades to students using spinner and theri ID.
 Author: Joseph
  */
 

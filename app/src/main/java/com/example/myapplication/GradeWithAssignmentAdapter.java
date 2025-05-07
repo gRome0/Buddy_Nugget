@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+
+/*
+RecyclerView adapter that shows assignment title and grade together
+Author: Joseph
+ */
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

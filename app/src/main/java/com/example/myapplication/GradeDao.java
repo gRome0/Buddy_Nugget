@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+
+/*
+for inserting, updating, and store grades with LiveData
+Author: Joseph
+ */
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
