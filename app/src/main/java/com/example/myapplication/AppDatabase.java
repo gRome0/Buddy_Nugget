@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+/*
+This is a database for class that links entities and Daos.
+Author: @Gael
+ */
+
+
 import android.content.Context;
 
 import androidx.room.Database;

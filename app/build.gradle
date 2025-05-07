@@ -36,10 +36,12 @@ dependencies {
     implementation libs.constraintlayout
 
     implementation "androidx.room:room-runtime:2.6.1"
+
     annotationProcessor "androidx.room:room-compiler:2.6.1"
 
-    implementation libs.room.common.jvm
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation 'androidx.tracing:tracing:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
 }

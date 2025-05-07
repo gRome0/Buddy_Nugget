@@ -1,4 +1,9 @@
 package com.example.myapplication;
+/*
+Form for admin to create new users
+Author: @Javier
+ */
+
 
 import android.content.Context;
 import android.content.Intent;

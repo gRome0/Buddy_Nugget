@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+/*
+ grade  connects an assignmentId to a studentId and score
+Author: Joseph
+ */
+
+
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;

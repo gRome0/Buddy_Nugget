@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+/*
+Assignment updates and stores assignment
+Author: @Javier
+ */
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
