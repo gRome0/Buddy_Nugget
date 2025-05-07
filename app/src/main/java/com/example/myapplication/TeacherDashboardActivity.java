@@ -20,15 +20,11 @@ public class TeacherDashboardActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         int userId = prefs.getInt("userId", -1);
-        if (userId == -1) {
-            finish();
-            return;
+        if (userId == -1) {finish();return;
         }
 
         User user = AppDatabase.getInstance(getApplicationContext()).userDao().getUserById(userId);
-        if (user.getRole() != User.Role.TEACHER) {
-            finish();
-            return;
+        if (user.getRole() != User.Role.TEACHER) {finish();return;
         }
 
         setContentView(R.layout.activity_teacher_dashboard);

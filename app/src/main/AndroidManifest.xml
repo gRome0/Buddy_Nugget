@@ -33,6 +33,7 @@
         <activity android:name=".ViewGradesFragment" />
         <activity android:name=".CreateUserActivity" />
         <activity android:name=".StudentRosterForTeacherActivity" />
+        <activity android:name=".ViewStudentGradesActivity" />
     </application>
 
 </manifest>

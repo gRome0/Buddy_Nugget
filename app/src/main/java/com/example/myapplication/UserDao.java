@@ -33,19 +33,15 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE studentId = :studentId LIMIT 1")
     com.example.myapplication.User findByStudentId(String studentId);
 
-    // NEW UPDATED: LiveData version for observing users by role
+
     @Query("SELECT * FROM User WHERE role = :role")
     LiveData<List<User>> getUsersByRoleLive(String role);
 
-    // NEW UPDATED: LiveData version for all users
     @Query("SELECT * FROM User")
     LiveData<List<User>> getAllUsersLive();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    long insertReturnId(User user); // Add this to get the inserted ID
-
+    long insertReturnId(User user);
     @Query("DELETE FROM User")
     void deleteAll();
-}
-
 }

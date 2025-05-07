@@ -1,28 +1,26 @@
- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="24dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <EditText
         android:id="@+id/assignmentTitle"
-        android:hint="@string/title"
+        android:hint="Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/assignmentDescription"
-        android:hint="@string/description"
+        android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     <EditText
         android:id="@+id/assignmentDueDate"
-        android:hint="@string/due_date_yyyy_mm_dd"
+        android:hint="Due Date (YYYY-MM-DD)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/submitAssignmentBtn"
-        android:text="@string/submit_assignment"
+        android:text="Submit Assignment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />
