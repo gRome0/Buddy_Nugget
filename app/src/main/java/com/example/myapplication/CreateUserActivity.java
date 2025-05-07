@@ -17,7 +17,6 @@ public class CreateUserActivity extends AppCompatActivity {
     private EditText usernameField, passwordField, studentIdField;
     private Button createBtn;
     private Spinner roleSpinner;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,6 @@ public class CreateUserActivity extends AppCompatActivity {
         studentIdField = findViewById(R.id.newStudentId);
         createBtn = findViewById(R.id.createUserBtn);
         roleSpinner = findViewById(R.id.roleSpinner);
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -36,22 +34,18 @@ public class CreateUserActivity extends AppCompatActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(adapter);
-
-        roleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        roleSpinner.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(android.widget.AdapterView<?> parent, View view, int position, long id) {
                 String selectedRole = roleSpinner.getSelectedItem().toString();
                 if (selectedRole.equals("NORMAL")) {
                     studentIdField.setVisibility(View.VISIBLE);
-                } else {
-                    studentIdField.setVisibility(View.GONE);
+                } else {studentIdField.setVisibility(View.GONE);
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(android.widget.AdapterView<?> parent) { }
         });
-
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,8 +82,7 @@ public class CreateUserActivity extends AppCompatActivity {
             }
         });
     }
-
-    public static Intent newIntent(Context context) {
-        return new Intent(context, CreateUserActivity.class);
+    public static android.content.Intent newIntent(android.content.Context context) {
+        return new android.content.Intent(context, CreateUserActivity.class);
     }
 }

@@ -6,24 +6,35 @@
 
     <Button
         android:id="@+id/createAssignmentBtn"
-        android:text="@string/create_assignment"
+        android:text="Create Assignment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/gradeAssignmentsBtn"
-        android:text="@string/grade_assignment"
+        android:text="Grade Assignment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp" />
+
     <Button
         android:id="@+id/viewStudentRosterBtn"
-        android:text="@string/view_student_roster"
+        android:text="View Student Roster"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp" />
+
+
+    <Button
+        android:id="@+id/viewGradesByStudentBtn"
+        android:text="View Student Grades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" />
+
     <Button
         android:id="@+id/logoutBtn"
-        android:text="@string/logout"
+        android:text="Logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />

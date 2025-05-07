@@ -11,27 +11,22 @@ import java.util.List;
 
 public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.AssignmentViewHolder> {
     private List<Assignment> assignmentList;
-
-
-
-    public AssignmentAdapter(List<com.example.myapplication.Assignment> assignmentList) {
-        this.assignmentList = assignmentList;
-    }
-
+    public AssignmentAdapter(List<Assignment> assignmentList) {
+        this.assignmentList = assignmentList;}
 
     @NonNull
     @Override
     public AssignmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
-        return new AssignmentViewHolder(view);
-    }
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_assignment_row, parent, false);
+        return new AssignmentViewHolder(view); }
 
     @Override
     public void onBindViewHolder(@NonNull AssignmentViewHolder holder, int position) {
         Assignment assignment = assignmentList.get(position);
         holder.title.setText("Title: " + assignment.getTitle());
-        holder.subtitle.setText("Due: " + assignment.getDueDate());
-    }
+        holder.due.setText("Due: " + assignment.getDueDate());
+        holder.description.setText("Description: " + assignment.getDescription()); }
 
     @Override
     public int getItemCount() {
@@ -39,13 +34,12 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
     }
 
     static class AssignmentViewHolder extends RecyclerView.ViewHolder {
-        TextView title;
-        TextView subtitle;
-
+        TextView title, due, description;
         public AssignmentViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(android.R.id.text1);
-            subtitle = itemView.findViewById(android.R.id.text2);
+            title = itemView.findViewById(R.id.assignmentTitle);
+            due = itemView.findViewById(R.id.assignmentDue);
+            description = itemView.findViewById(R.id.assignmentDescription);
         }
     }
 }
