@@ -1,5 +1,8 @@
 package com.example.myapplication;
-
+/*
+shows normal their assignment
+Author: @Imane
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;

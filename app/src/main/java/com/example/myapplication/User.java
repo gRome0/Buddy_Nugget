@@ -13,6 +13,10 @@ import androidx.room.TypeConverters;
 @Entity
 @TypeConverters(com.example.myapplication.RoleConverter.class)
 public class User {
+    public User() {
+
+    }
+
     public enum Role {
         NORMAL, TEACHER, ADMIN;
 

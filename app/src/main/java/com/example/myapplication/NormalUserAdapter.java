@@ -1,5 +1,12 @@
 package com.example.myapplication;
 
+
+/*
+shows the student username and ids to the teacehr
+Author: @Imane
+ */
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

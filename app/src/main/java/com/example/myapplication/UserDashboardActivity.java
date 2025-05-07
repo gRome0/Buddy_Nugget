@@ -1,5 +1,9 @@
 package com.example.myapplication;
-
+/*
+welcomes the user to the student view and checking grades
+as well looking assignment and their descr.
+Author: @Imane
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

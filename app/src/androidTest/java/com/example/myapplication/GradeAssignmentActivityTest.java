@@ -17,8 +17,7 @@ public class GradeAssignmentActivityTest {
     @Test
     public void NoNoNoEmptiesz() {
         try (ActivityScenario<GradeAssignmentActivity> scenario = ActivityScenario.launch(
-                new Intent(androidx.test.core.app.ApplicationProvider.getApplicationContext(), GradeAssignmentActivity.class))) {
-            onView(withId(R.id.submitGradeBtn)).perform(click());
+                new Intent(androidx.test.core.app.ApplicationProvider.getApplicationContext(), GradeAssignmentActivity.class))) { onView(withId(R.id.submitGradeBtn)).perform(click());
         } //TODO need to add gradle code for unit test
     }
 }
