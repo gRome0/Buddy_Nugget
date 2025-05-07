@@ -26,7 +26,6 @@ public class CreateUserActivityTest {
             onView(withId(R.id.newPassword)).perform(typeText("pass123"), closeSoftKeyboard());
             onView(withId(R.id.roleSpinner)).perform(click());
             onView(withText("NORMAL")).perform(click());
-
             onView(withId(R.id.createUserBtn)).perform(click());
         }
     }

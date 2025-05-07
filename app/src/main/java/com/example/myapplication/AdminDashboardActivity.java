@@ -1,4 +1,10 @@
 package com.example.myapplication;
+/*
+This is a dashboard for admin options to create users or
+assignments.
+Author: @Gael
+ */
+
 
 import android.content.Context;
 import android.content.Intent;

@@ -1,5 +1,8 @@
 package com.example.myapplication;
-
+/*
+shows the teacher every student and their id
+Author: @javier
+ */
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;

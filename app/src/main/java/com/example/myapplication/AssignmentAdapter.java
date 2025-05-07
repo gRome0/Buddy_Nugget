@@ -1,5 +1,12 @@
 package com.example.myapplication;
 
+
+/*
+Assignment adapter recyclerView adapter used to display assignment info
+Author: @Javier
+ */
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +24,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
     @NonNull
     @Override
     public AssignmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_assignment_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()) .inflate(R.layout.item_assignment_row, parent, false);
         return new AssignmentViewHolder(view); }
 
     @Override

@@ -37,8 +37,7 @@ public class TeacherDashboardActivityTest {
     public void CreateAssignmentBtnWorks() {
         Intent intent = new Intent(ApplicationProvider.getApplicationContext(), TeacherDashboardActivity.class);
         try (ActivityScenario<TeacherDashboardActivity> scenario = ActivityScenario.launch(intent))
-        {onView(withId(R.id.createAssignmentBtn)).perform(click());
-            intended(hasComponent(CreateAssignmentActivity.class.getName()));
+        {onView(withId(R.id.createAssignmentBtn)).perform(click()); intended(hasComponent(CreateAssignmentActivity.class.getName()));
         }
     }
 
@@ -46,8 +45,7 @@ public class TeacherDashboardActivityTest {
     public void ViewRosterBtnWorks() {
         Intent intent = new Intent(ApplicationProvider.getApplicationContext(), TeacherDashboardActivity.class);
         try (ActivityScenario<TeacherDashboardActivity> scenario = ActivityScenario.launch(intent))
-        {onView(withId(R.id.viewStudentRosterBtn)).perform(click());
-            intended(hasComponent(StudentRosterForTeacherActivity.class.getName()));
+        {onView(withId(R.id.viewStudentRosterBtn)).perform(click()); intended(hasComponent(StudentRosterForTeacherActivity.class.getName()));
         }
     }
 }

@@ -1,4 +1,8 @@
 package com.example.myapplication;
+/*
+Shows the Normal user their grades with fragments
+Author: Imane
+ */
 
 import android.content.Context;
 import android.content.Intent;

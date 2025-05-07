@@ -1,5 +1,13 @@
 package com.example.myapplication;
 
+
+/*
+lets teachers assign grades to students using spinner and theri ID.
+Author: Joseph
+ */
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,8 +37,7 @@ public class GradeAssignmentActivity extends AppCompatActivity {
         List<Assignment> assignments = db.assignmentDao().getAllAssignments();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
-        for (Assignment a : assignments) { String label = "ID: " + a.getAssignmentId() + " - " + a.getTitle(); adapter.add(label); assignmentMap.put(label, a.getAssignmentId());
-        }
+        for (Assignment a : assignments) { String label = "ID: " + a.getAssignmentId() + " - " + a.getTitle(); adapter.add(label); assignmentMap.put(label, a.getAssignmentId());}
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assignmentSpinner.setAdapter(adapter);
@@ -51,10 +58,7 @@ public class GradeAssignmentActivity extends AppCompatActivity {
                     if (student == null) { Toast.makeText(GradeAssignmentActivity.this, "Student ID not found", Toast.LENGTH_SHORT).show(); return; }
                     Grade grade = new Grade(0, assignmentId, studentIdText, score); db.gradeDao().insert(grade);
 
-
-
-                    Toast.makeText(GradeAssignmentActivity.this,  "Grade submitted for " + student.getUsername(),
-                            Toast.LENGTH_SHORT).show(); finish(); } catch (NumberFormatException e)
+                    Toast.makeText(GradeAssignmentActivity.this,  "Grade submitted for " + student.getUsername(),  Toast.LENGTH_SHORT).show(); finish(); } catch (NumberFormatException e)
                 {Toast.makeText(GradeAssignmentActivity.this, "Invalid score format", Toast.LENGTH_SHORT).show(); }}
         });
     }

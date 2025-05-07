@@ -8,6 +8,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/*
+dash for teacher to creat and assign, look and roster and grades
+Author: @javier
+ */
+
 public class TeacherDashboardActivity extends AppCompatActivity {
     private Button createAssignmentBtn, gradeAssignmentsBtn, viewStudentRosterBtn, logoutBtn;
 

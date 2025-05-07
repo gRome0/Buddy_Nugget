@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+/*
+Assignment stores assignment title, description, and due date.
+Author: @Javier
+ */
+
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -35,18 +41,15 @@ public class Assignment {
 
         return dueDate;
     }
-
     public void setAssignmentId(int assignmentId) {
 
         this.assignmentId = assignmentId;
     }
     public void setTitle(String title) {
 
-        this.title = title;
-    }
+        this.title = title;}
     public void setDescription(String description) { this.description = description; }
     public void setDueDate(String dueDate) {
-
         this.dueDate = dueDate;
     }
 }

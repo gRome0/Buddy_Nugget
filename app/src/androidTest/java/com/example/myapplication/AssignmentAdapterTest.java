@@ -26,5 +26,7 @@ public class AssignmentAdapterTest {
         assertEquals("Due: 2025-06-01", holder.due.getText().toString());
         assertEquals("Description: Create app on Android Studio in 338", holder.description.getText().toString());
     }
+
 }
+
 

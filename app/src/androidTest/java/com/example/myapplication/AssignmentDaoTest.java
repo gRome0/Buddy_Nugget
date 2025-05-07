@@ -31,9 +31,8 @@ public class AssignmentDaoTest {
     }
 
     @After
-    public void closeDb() throws IOException {
-        db.close();
-    }
+    public void closeDb() throws IOException
+    {db.close();}
 
     @Test
     public void testInsertAssignment() {
@@ -48,12 +47,10 @@ public class AssignmentDaoTest {
 
     @Test
     public void testUpdateAssignment() {
-        Assignment a = new Assignment(0, "HW02", "Original Desc", "2025-12-31");
-        assignmentDao.insert(a);
+        Assignment a = new Assignment(0, "HW02", "Original Desc", "2025-12-31"); assignmentDao.insert(a);
 
         Assignment inserted = assignmentDao.getAllAssignments().get(0);
-        inserted.setDescription("Updated Desc");
-        assignmentDao.update(inserted);
+        inserted.setDescription("Updated Desc"); assignmentDao.update(inserted);
 
         Assignment updated = assignmentDao.getAllAssignments().get(0);
         assertEquals("Updated Desc", updated.getDescription());
@@ -61,13 +58,10 @@ public class AssignmentDaoTest {
 
     @Test
     public void testDeleteAssignment() {
-        Assignment a = new Assignment(0, "HW03", "To be deleted", "2025-12-31");
-        assignmentDao.insert(a);
+        Assignment a = new Assignment(0, "HW03", "To be deleted", "2025-12-31"); assignmentDao.insert(a);
 
-        Assignment toDelete = assignmentDao.getAllAssignments().get(0);
-        assignmentDao.delete(toDelete);
+        Assignment toDelete = assignmentDao.getAllAssignments().get(0); assignmentDao.delete(toDelete);
 
-        List<Assignment> result = assignmentDao.getAllAssignments();
-        assertTrue(result.isEmpty());
+        List<Assignment> result = assignmentDao.getAllAssignments(); assertTrue(result.isEmpty());
     }
 }

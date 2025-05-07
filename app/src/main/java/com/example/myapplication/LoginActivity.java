@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
-
+/*
+signs the user in according to what their role is
+Author: @Gael
+ */
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,10 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordField = findViewById(R.id.password);
         loginButton = findViewById(R.id.LoginBtn);
 
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "grade_tracker_db")
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "grade_tracker_db").allowMainThreadQueries() .fallbackToDestructiveMigration() .build();
 
         userDao = db.userDao();
 
@@ -54,8 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 User user = userDao.findByUsername(username);
 
-                if (user != null && user.getPassword().equals(password)) {
-                    SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                if (user != null && user.getPassword().equals(password)) { SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
                     prefs.edit().putInt("userId", user.getUserId()).apply();
 
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();

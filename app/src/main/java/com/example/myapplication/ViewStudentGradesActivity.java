@@ -1,5 +1,8 @@
 package com.example.myapplication;
-
+/*
+shows teach. the students grades from their ids
+Author: @Joseph
+ */
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,13 +35,11 @@ public class ViewStudentGradesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String sid = inputStudentId.getText().toString().trim();
-                if (!sid.isEmpty()) {
-                    AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+                if (!sid.isEmpty())
+                {AppDatabase db = AppDatabase.getInstance(getApplicationContext());
                     List<GradeWithAssignment> grades =
-                            db.gradeDao().getGradesWithAssignmentsByStudent(sid);
-                    adapter = new GradeWithAssignmentAdapter(grades);
-                    gradesRecyclerView.setAdapter(adapter);
-                }
+                            db.gradeDao().getGradesWithAssignmentsByStudent(sid); adapter = new GradeWithAssignmentAdapter(grades);
+                    gradesRecyclerView.setAdapter(adapter); }
             }
         });
     }

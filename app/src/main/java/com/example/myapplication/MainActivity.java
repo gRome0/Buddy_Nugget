@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+/*
+launchs the app and checks if the user has already loggged in
+Author: @Gael
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

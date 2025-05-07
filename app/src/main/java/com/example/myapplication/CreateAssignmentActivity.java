@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+/*
+for teachers and admins to make assign
+Author: @Javier
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;

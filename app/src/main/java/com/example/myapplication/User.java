@@ -1,5 +1,9 @@
 package com.example.myapplication;
 
+/*
+this is what defines teh user to and their rol
+Author: @Gael
+ */
 
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -9,6 +13,10 @@ import androidx.room.TypeConverters;
 @Entity
 @TypeConverters(com.example.myapplication.RoleConverter.class)
 public class User {
+    public User() {
+
+    }
+
     public enum Role {
         NORMAL, TEACHER, ADMIN;
 

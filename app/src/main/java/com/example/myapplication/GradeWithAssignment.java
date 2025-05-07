@@ -1,4 +1,8 @@
 package com.example.myapplication;
+/*
+connects Grade to its corresponding Assignment
+Author: Joseph
+ */
 
 import androidx.room.Embedded;
 import androidx.room.Relation;

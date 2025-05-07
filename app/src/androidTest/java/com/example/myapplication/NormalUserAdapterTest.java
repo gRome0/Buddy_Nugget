@@ -21,6 +21,7 @@ public class NormalUserAdapterTest {
         NormalUserAdapter.NormalUserViewHolder holder = adapter.onCreateViewHolder(parent, 0);
         adapter.onBindViewHolder(holder, 0);
 
+
         assertEquals("Username: johnPork", holder.usernameView.getText().toString());
         assertEquals("Student ID: SID007", holder.studentIdView.getText().toString());
     }
