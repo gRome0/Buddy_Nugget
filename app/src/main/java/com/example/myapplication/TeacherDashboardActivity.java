@@ -9,15 +9,14 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TeacherDashboardActivity extends AppCompatActivity {
-    private Button createAssignmentBtn;
-    private Button gradeAssignmentsBtn;
-    private Button viewStudentRosterBtn;
-    private Button logoutBtn;
+    private Button createAssignmentBtn, gradeAssignmentsBtn, viewStudentRosterBtn, logoutBtn;
+
+    private Button viewGradesByStudentBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_dashboard);
+
 
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         int userId = prefs.getInt("userId", -1);
@@ -32,12 +31,17 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             return;
         }
 
+        setContentView(R.layout.activity_teacher_dashboard);
+
         createAssignmentBtn = findViewById(R.id.createAssignmentBtn);
         gradeAssignmentsBtn = findViewById(R.id.gradeAssignmentsBtn);
         viewStudentRosterBtn = findViewById(R.id.viewStudentRosterBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
 
-        createAssignmentBtn.setOnClickListener(new View.OnClickListener(){
+
+        viewGradesByStudentBtn = findViewById(R.id.viewGradesByStudentBtn);
+
+        createAssignmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TeacherDashboardActivity.this, CreateAssignmentActivity.class));
@@ -58,6 +62,14 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             }
         });
 
+
+        viewGradesByStudentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherDashboardActivity.this, ViewStudentGradesActivity.class));
+            }
+        });
+
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,8 +80,8 @@ public class TeacherDashboardActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
+
     public static Intent newIntent(Context context) {
         return new Intent(context, TeacherDashboardActivity.class);
     }

@@ -44,10 +44,7 @@ public class Assignment {
 
         this.title = title;
     }
-    public void setDescription(String description) {
-
-        this.description = description;
-    }
+    public void setDescription(String description) { this.description = description; }
     public void setDueDate(String dueDate) {
 
         this.dueDate = dueDate;

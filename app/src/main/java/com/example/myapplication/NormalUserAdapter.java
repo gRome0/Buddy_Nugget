@@ -17,7 +17,6 @@ public class NormalUserAdapter extends RecyclerView.Adapter<NormalUserAdapter.No
     }
     @NonNull
 
-
     @Override
     public NormalUserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user_row, parent, false);
@@ -25,10 +24,7 @@ public class NormalUserAdapter extends RecyclerView.Adapter<NormalUserAdapter.No
 
     @Override
     public void onBindViewHolder(@NonNull NormalUserViewHolder holder, int position)
-    {User user = userList.get(position);
-        holder.usernameView.setText("Username: " + user.getUsername());
-        holder.studentIdView.setText
-            ("Student ID: " + (user.getStudentId() != null ? user.getStudentId() : "N/A")); }
+    {User user = userList.get(position); holder.usernameView.setText("Username: " + user.getUsername()); holder.studentIdView.setText("Student ID: " + (user.getStudentId() != null ? user.getStudentId() : "N/A")); }
 
     @Override
     public int getItemCount() {
