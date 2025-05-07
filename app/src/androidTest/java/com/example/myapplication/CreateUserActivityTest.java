@@ -21,7 +21,6 @@ public class CreateUserActivityTest {
     public void needsStudentPassAndUser() {
         try (ActivityScenario<CreateUserActivity> scenario = ActivityScenario.launch(new Intent(
                 androidx.test.core.app.ApplicationProvider.getApplicationContext(), CreateUserActivity.class))) {
-
             onView(withId(R.id.newUsername)).perform(typeText("newuser"), closeSoftKeyboard());
             onView(withId(R.id.newPassword)).perform(typeText("pass123"), closeSoftKeyboard());
             onView(withId(R.id.roleSpinner)).perform(click());
