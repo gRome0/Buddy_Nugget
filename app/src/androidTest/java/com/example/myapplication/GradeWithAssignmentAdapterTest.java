@@ -1,6 +1,15 @@
 package com.example.myapplication;
 
+import static org.junit.Assert.assertEquals;
+
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.test.core.app.ApplicationProvider;
+
 import org.junit.Test;
+
+import java.util.Collections;
 
 public class GradeWithAssignmentAdapterTest {
     @Test
