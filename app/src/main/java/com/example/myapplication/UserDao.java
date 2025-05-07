@@ -3,7 +3,10 @@ package com.example.myapplication;
 import androidx.lifecycle.LiveData;
 import androidx.room.*;
 import java.util.List;
-
+/*
+room for stores user data
+Author: @Gael
+ */
 @Dao
 public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

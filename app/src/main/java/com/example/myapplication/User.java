@@ -1,5 +1,9 @@
 package com.example.myapplication;
 
+/*
+this is what defines teh user to and their rol
+Author: @Gael
+ */
 
 import androidx.room.Entity;
 import androidx.room.Ignore;

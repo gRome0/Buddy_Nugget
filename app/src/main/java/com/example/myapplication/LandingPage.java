@@ -1,5 +1,11 @@
 package com.example.myapplication;
 
+/*
+welcomes the user when ipens app
+Author: @Gael
+ */
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
