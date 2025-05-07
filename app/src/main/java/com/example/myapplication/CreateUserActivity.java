@@ -4,12 +4,11 @@ Form for admin to create new users
 Author: @Javier
  */
 
-
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +21,7 @@ public class CreateUserActivity extends AppCompatActivity {
     private EditText usernameField, passwordField, studentIdField;
     private Button createBtn;
     private Spinner roleSpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,25 +32,39 @@ public class CreateUserActivity extends AppCompatActivity {
         studentIdField = findViewById(R.id.newStudentId);
         createBtn = findViewById(R.id.createUserBtn);
         roleSpinner = findViewById(R.id.roleSpinner);
+
+
+        SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        boolean createFromMain = prefs.getBoolean("createFromMain", false);
+        if (createFromMain) {
+            prefs.edit().remove("createFromMain").apply(); // Clean up flag
+        }
+
+
+        String[] allowedRoles = createFromMain ? new String[]{"NORMAL"} : new String[]{"NORMAL", "TEACHER", "ADMIN"};
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
-                new String[]{"NORMAL", "TEACHER", "ADMIN"}
+                allowedRoles
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(adapter);
+
         roleSpinner.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(android.widget.AdapterView<?> parent, View view, int position, long id) {
                 String selectedRole = roleSpinner.getSelectedItem().toString();
-                if (selectedRole.equals("NORMAL")) {
-                    studentIdField.setVisibility(View.VISIBLE);
-                } else {studentIdField.setVisibility(View.GONE);
+                if (selectedRole.equals("NORMAL")) {studentIdField.setVisibility(View.VISIBLE);
+                } else {
+                    studentIdField.setVisibility(View.GONE);
                 }
             }
+
             @Override
             public void onNothingSelected(android.widget.AdapterView<?> parent) { }
         });
+
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +78,7 @@ public class CreateUserActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (selectedRole.equals("NORMAL") && studentId.isEmpty()) {
-                    Toast.makeText(CreateUserActivity.this, "Student ID is required for NORMAL users", Toast.LENGTH_SHORT).show();
+                if (selectedRole.equals("NORMAL") && studentId.isEmpty()) { Toast.makeText(CreateUserActivity.this, "Student ID is required for NORMAL users", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -77,8 +90,7 @@ public class CreateUserActivity extends AppCompatActivity {
                     return;
                 }
 
-                User.Role role = User.Role.valueOf(selectedRole);
-                String studentIdToUse = selectedRole.equals("NORMAL") ? studentId : null;
+                User.Role role = User.Role.valueOf(selectedRole); String studentIdToUse = selectedRole.equals("NORMAL") ? studentId : null;
                 User newUser = new User(0, username, password, role, studentIdToUse);
                 userDao.insert(newUser);
 
@@ -87,6 +99,7 @@ public class CreateUserActivity extends AppCompatActivity {
             }
         });
     }
+
     public static android.content.Intent newIntent(android.content.Context context) {
         return new android.content.Intent(context, CreateUserActivity.class);
     }
