@@ -30,9 +30,10 @@
         <activity android:name=".CreateAssignmentActivity" />
         <activity android:name=".GradeAssignmentActivity" />
         <activity android:name=".ViewAssignmentsActivity" />
-        <activity android:name=".ViewGradesActivity" />
+        <activity android:name=".ViewGradesFragment" />
         <activity android:name=".CreateUserActivity" />
         <activity android:name=".StudentRosterForTeacherActivity" />
+        <activity android:name=".ViewStudentGradesActivity" />
     </application>
 
 </manifest>

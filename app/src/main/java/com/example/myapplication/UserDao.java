@@ -1,14 +1,13 @@
 package com.example.myapplication;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.*;
 import java.util.List;
 
 @Dao
 public interface UserDao {
-
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(com.example.myapplication.User user);
+    long insert(com.example.myapplication.User user);
 
     @Update
     void update(com.example.myapplication.User user);
@@ -16,9 +15,7 @@ public interface UserDao {
     @Delete
     void delete(com.example.myapplication.User user);
 
-
-
-    @Query ("SELECT * FROM User WHERE username = :username AND password = :password LIMIT 1")
+    @Query("SELECT * FROM User WHERE username = :username AND password = :password LIMIT 1")
     com.example.myapplication.User login(String username, String password);
 
     @Query("SELECT * FROM User WHERE username = :username LIMIT 1")
@@ -35,4 +32,16 @@ public interface UserDao {
 
     @Query("SELECT * FROM User WHERE studentId = :studentId LIMIT 1")
     com.example.myapplication.User findByStudentId(String studentId);
+
+
+    @Query("SELECT * FROM User WHERE role = :role")
+    LiveData<List<User>> getUsersByRoleLive(String role);
+
+    @Query("SELECT * FROM User")
+    LiveData<List<User>> getAllUsersLive();
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    long insertReturnId(User user);
+    @Query("DELETE FROM User")
+    void deleteAll();
 }

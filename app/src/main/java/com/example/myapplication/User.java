@@ -42,7 +42,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.role = role;
-        this.studentId = null; // Default
+        this.studentId = null;
     }
 
     /// setters and getters

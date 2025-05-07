@@ -31,27 +31,20 @@ public class CreateAssignmentActivity extends AppCompatActivity {
                 String description = descriptionField.getText().toString().trim();
                 String dueDate = dueDateField.getText().toString().trim();
 
-                if (title.isEmpty() || description.isEmpty() || dueDate.isEmpty()) {
-                    Toast.makeText(CreateAssignmentActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                if (title.isEmpty() || description.isEmpty() || dueDate.isEmpty()) {Toast.makeText(CreateAssignmentActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 Assignment assignment = new Assignment(0, title, description, dueDate);
-
                 AppDatabase db = AppDatabase.getInstance(getApplicationContext());
-
                 long insertedId = db.assignmentDao().insert(assignment);
-
                 Toast.makeText(CreateAssignmentActivity.this,
-                        "Assignment created with ID: " + insertedId,
-                        Toast.LENGTH_LONG).show();
-
+                        "Assignment created with ID: " + insertedId, Toast.LENGTH_LONG).show();
                 finish();
             }
         });
     }
-
-    public static Intent newIntent(Context context) {
-        return new Intent(context, CreateAssignmentActivity.class);
+    public static android.content.Intent newIntent(android.content.Context context) {
+        return new android.content.Intent(context, CreateAssignmentActivity.class);
     }
 }
+
